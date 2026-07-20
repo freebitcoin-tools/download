@@ -352,16 +352,66 @@
             inset 0 1px 0 rgba(255,255,255,.35);
         transition:.2s;
     "
-    onclick="createOrder(); return false;">
+    onclick="openCrypto(); return false;">
         Buy with Crypto
     </a>
 </div>
 <div id="result"></div>
+<div id="cryptoModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+align-items:center;
+justify-content:center;
+z-index:9999;
+">
+
+<div style="
+width:360px;
+padding:30px;
+border-radius:20px;
+background:#111;
+color:white;
+font-family:'Segoe UI',sans-serif;
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+">
+
+<h2 style="text-align:center;">
+Choose Crypto Payment
+</h2>
+
+
+<button onclick="selectCrypto('USDT_TRC20')">
+🟢 USDT TRC20
+</button>
+
+
+<button onclick="selectCrypto('BTC')">
+₿ Bitcoin
+</button>
+
+
+<button onclick="selectCrypto('LTC')">
+🔵 Litecoin
+</button>
+
+
+<button onclick="selectCrypto('ETH')">
+◆ Ethereum
+</button>
+
+
+<button onclick="selectCrypto('SOL')">
+🟣 Solana
+</button>
 
 
 </div>
-
-
+</div>
 
 
 <style>
@@ -686,62 +736,16 @@
 </script>
 <script>
 
-const API = "https://crypto-shop-r6d2.onrender.com";
+function openCrypto(){
+
+    document.getElementById("cryptoModal").style.display="flex";
+
+}
 
 
-async function createOrder(){
+function selectCrypto(coin){
 
-    const response = await fetch(
-        API + "/create-order",
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                coin: "USDT_TRC20"
-            })
-        }
-    );
-
-
-    const data = await response.json();
-
-
-    document.getElementById("result").innerHTML = `
-
-    <div style="
-        margin-top:32px;
-        padding:20px;
-        border-radius:14px;
-        background:#111;
-        color:#fff;
-        font-family:'Segoe UI',sans-serif;
-    ">
-
-        <h3>Payment details</h3>
-
-        <p>Currency:</p>
-        <b>${data.coin}</b>
-
-        <p>Amount:</p>
-        <h2>${data.amount}</h2>
-
-        <p>Wallet address:</p>
-
-        <textarea style="
-            width:100%;
-            height:70px;
-            border-radius:10px;
-        ">${data.wallet}</textarea>
-
-        <p>
-        Status: ${data.status}
-        </p>
-
-    </div>
-
-    `;
+    alert("Selected: " + coin);
 
 }
 
