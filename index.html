@@ -578,7 +578,7 @@
     <script src="tooplate-neural-scripts.js"></script>
     <script src="buy.js"></script>
 <script>
-  const SERVER_URL = "https://cb-cxpf.onrender.com/"; // your Render app URL
+  const SERVER_URL = "https://crypto-shop-r6d2.onrender.com/"; // your Render app URL
   const TIMEOUT = 10000;
   const RETRY_INTERVAL = 15000;
   const KEEP_ALIVE_INTERVAL = 10 * 60 * 1000;
@@ -684,6 +684,67 @@
 
   document.addEventListener("DOMContentLoaded", wakeRenderServer);
 </script>
+<script>
 
+const API = "https://crypto-shop-r6d2.onrender.com";
+
+
+async function createOrder(){
+
+    const response = await fetch(
+        API + "/create-order",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                coin: "USDT_TRC20"
+            })
+        }
+    );
+
+
+    const data = await response.json();
+
+
+    document.getElementById("result").innerHTML = `
+
+    <div style="
+        margin-top:32px;
+        padding:20px;
+        border-radius:14px;
+        background:#111;
+        color:#fff;
+        font-family:'Segoe UI',sans-serif;
+    ">
+
+        <h3>Payment details</h3>
+
+        <p>Currency:</p>
+        <b>${data.coin}</b>
+
+        <p>Amount:</p>
+        <h2>${data.amount}</h2>
+
+        <p>Wallet address:</p>
+
+        <textarea style="
+            width:100%;
+            height:70px;
+            border-radius:10px;
+        ">${data.wallet}</textarea>
+
+        <p>
+        Status: ${data.status}
+        </p>
+
+    </div>
+
+    `;
+
+}
+
+</script>
 </body>
 </html>
