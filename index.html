@@ -376,7 +376,9 @@ z-index:9999;
 ">
 
 
+
 <div style="
+position:relative;
 width:360px;
 padding:30px;
 border-radius:20px;
@@ -385,6 +387,26 @@ color:white;
 font-family:'Segoe UI',sans-serif;
 box-shadow:0 20px 60px rgba(0,0,0,.5);
 ">
+
+
+
+<button onclick="closeCrypto()" style="
+position:absolute;
+top:12px;
+right:12px;
+width:36px;
+height:36px;
+border-radius:50%;
+border:none;
+background:#222;
+color:white;
+font-size:22px;
+font-weight:700;
+cursor:pointer;
+">
+×
+</button>
+
 
 
 <h2 style="
@@ -477,6 +499,7 @@ cursor:pointer;
 ">
 🟣 Solana
 </button>
+
 
 
 </div>
@@ -961,7 +984,12 @@ async function selectCrypto(coin){
 
 
 }
+	
+function closeCrypto(){
 
+    document.getElementById("cryptoModal").style.display="none";
+
+}
 </script>
 </body>
 </html>
