@@ -1255,7 +1255,19 @@ async function selectCrypto(coin){
 
             <a id="downloadLink"
             class="download-after-pay"
-            target="_blank">
+            target="_blank"
+            style="
+            display:none;
+            margin-top:25px;
+            padding:16px;
+            border-radius:14px;
+            background:#00c853;
+            color:#000;
+            font-weight:800;
+            text-decoration:none;
+            font-size:18px;
+            text-align:center;
+            ">
 
             Download Product
 
@@ -1435,33 +1447,49 @@ async function checkPayment(){
             if(data.status==="paid"){
 
 
+            clearInterval(interval);
 
-                clearInterval(interval);
-
-                clearInterval(timerInterval);
-
-
-
-                document.getElementById("payStatus").innerHTML =
-                "✅ Payment Confirmed";
+            clearInterval(timerInterval);
 
 
 
+            document.getElementById("payStatus").innerHTML =
+            "✅ Payment Confirmed";
 
-                let btn =
-                document.getElementById("downloadLink");
 
+
+            let btn = document.getElementById("downloadLink");
+
+
+
+            if(data.download){
 
 
                 btn.href = data.download;
+
+                btn.target="_blank";
+
+                btn.innerHTML="⬇ Download Product";
+
+                btn.style.display="block";
+
+
+            }
+            else{
+
+
+                btn.innerHTML =
+                "⚠ Download link not received from server";
 
 
                 btn.style.display="block";
 
 
-
             }
 
+
+
+            }
 
 
 
