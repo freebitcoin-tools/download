@@ -726,106 +726,323 @@ cursor:pointer;
   const RETRY_INTERVAL = 15000;
   const KEEP_ALIVE_INTERVAL = 10 * 60 * 1000;
 
-  // create status box
-  const statusBox = document.createElement("div");
-  Object.assign(statusBox.style, {
+// Premium Payment Gateway Status
+const statusBox = document.createElement("div");
+
+Object.assign(statusBox.style, {
+
     position: "fixed",
-    bottom: "15px",
-    right: "15px",
-    background: "rgba(0,0,0,0.75)",
+    bottom: "18px",
+    right: "18px",
+
+    background: "rgba(15,15,15,0.92)",
     color: "#fff",
-    padding: "6px 12px",
-    borderRadius: "10px",
-    fontFamily: "monospace",
+
+    padding: "10px 18px",
+    borderRadius: "14px",
+
+    fontFamily: "'Segoe UI', sans-serif",
     fontSize: "13px",
+    fontWeight: "600",
+
+    letterSpacing: ".3px",
+
     zIndex: "9999",
-    boxShadow: "0 0 6px rgba(0,0,0,0.3)",
-    transition: "background 0.3s ease, color 0.3s ease",
-  });
-  statusBox.textContent = "Checking server...";
-  document.body.appendChild(statusBox);
 
-  function updateStatus(state, text) {
+    border: "1px solid rgba(255,255,255,.12)",
+
+    boxShadow:
+        "0 10px 35px rgba(0,0,0,.45)",
+
+    backdropFilter: "blur(10px)",
+
+    transition:
+        "all .35s ease"
+
+});
+
+
+statusBox.innerHTML =
+"🔒 Initializing Secure Payment Gateway...";
+
+
+document.body.appendChild(statusBox);
+
+
+
+function updateStatus(state, text) {
+
+
     requestAnimationFrame(() => {
-      statusBox.textContent = text;
-      if (state === "awake") {
-        statusBox.style.background = "#2ecc71";
-        statusBox.style.color = "#fff";
-      } else if (state === "sleeping") {
-        statusBox.style.background = "#e74c3c";
-        statusBox.style.color = "#fff";
-      } else if (state === "pinging") {
-        statusBox.style.background = "#f1c40f";
-        statusBox.style.color = "#000";
-      } else {
-        statusBox.style.background = "rgba(0,0,0,0.75)";
-        statusBox.style.color = "#fff";
-      }
-    });
-  }
 
-  // simplified ping: if fetch resolves => success
-  function pingServer(timeout = TIMEOUT) {
-    return new Promise((resolve) => {
-      let done = false;
-      const timer = setTimeout(() => {
-        if (!done) {
-          done = true;
-          resolve(false);
+
+        statusBox.innerHTML = text;
+
+
+
+        if(state === "awake"){
+
+
+            statusBox.style.background =
+            "linear-gradient(135deg,#0f8f4d,#00c853)";
+
+
+            statusBox.style.border =
+            "1px solid rgba(0,255,120,.5)";
+
+
+            statusBox.style.boxShadow =
+            "0 0 25px rgba(0,255,120,.35)";
+
+
+
+            statusBox.style.color="#fff";
+
+
         }
-      }, timeout);
 
-      // no-cors to bypass CORS block; success means server responded at all
-      fetch(SERVER_URL, { mode: "no-cors", cache: "no-store" })
-        .then(() => {
-          if (!done) {
-            done = true;
-            clearTimeout(timer);
-            resolve(true); // any response means "awake"
-          }
-        })
-        .catch(() => {
-          if (!done) {
-            done = true;
-            clearTimeout(timer);
-            resolve(false);
-          }
-        });
+
+
+        else if(state === "sleeping"){
+
+
+            statusBox.style.background =
+            "linear-gradient(135deg,#8b1e1e,#d32f2f)";
+
+
+            statusBox.style.border =
+            "1px solid rgba(255,80,80,.45)";
+
+
+            statusBox.style.boxShadow =
+            "0 0 25px rgba(255,50,50,.35)";
+
+
+
+            statusBox.style.color="#fff";
+
+
+        }
+
+
+
+        else if(state === "pinging"){
+
+
+            statusBox.style.background =
+            "linear-gradient(135deg,#9a7600,#f1c40f)";
+
+
+            statusBox.style.color="#111";
+
+
+            statusBox.style.boxShadow =
+            "0 0 25px rgba(255,200,0,.35)";
+
+
+        }
+
+
     });
-  }
 
-  async function wakeRenderServer() {
-    console.log(`[${new Date().toLocaleTimeString()}] Initial ping...`);
-    updateStatus("pinging", "Pinging server...");
+
+}
+
+
+
+
+function pingServer(timeout = TIMEOUT){
+
+
+    return new Promise((resolve)=>{
+
+
+        let done=false;
+
+
+        const timer=setTimeout(()=>{
+
+
+            if(!done){
+
+                done=true;
+                resolve(false);
+
+            }
+
+
+        },timeout);
+
+
+
+        fetch(SERVER_URL,{
+            mode:"no-cors",
+            cache:"no-store"
+        })
+
+
+        .then(()=>{
+
+
+            if(!done){
+
+                done=true;
+                clearTimeout(timer);
+
+                resolve(true);
+
+            }
+
+
+        })
+
+
+        .catch(()=>{
+
+
+            if(!done){
+
+                done=true;
+                clearTimeout(timer);
+
+                resolve(false);
+
+            }
+
+
+        });
+
+
+
+    });
+
+
+}
+
+
+
+
+async function wakeRenderServer(){
+
+
+    console.log(
+        `[${new Date().toLocaleTimeString()}] Payment gateway check...`
+    );
+
+
+
+    updateStatus(
+        "pinging",
+        "⚡ Connecting Secure Payment Gateway..."
+    );
+
+
 
     let alive = await pingServer();
+
+
     let tries = 0;
 
-    while (!alive && tries < 20) {
-      tries++;
-      console.log(`[${new Date().toLocaleTimeString()}] Server sleeping, retry #${tries}`);
-      updateStatus("sleeping", `Server sleeping... retrying (${tries})`);
-      await new Promise(r => setTimeout(r, RETRY_INTERVAL));
-      updateStatus("pinging", "Pinging again...");
-      alive = await pingServer();
+
+
+    while(!alive && tries < 20){
+
+
+        tries++;
+
+
+        updateStatus(
+            "sleeping",
+            `⏳ Payment Server Activating... (${tries})`
+        );
+
+
+
+        await new Promise(r =>
+            setTimeout(r, RETRY_INTERVAL)
+        );
+
+
+
+        updateStatus(
+            "pinging",
+            "🔄 Reconnecting Payment Gateway..."
+        );
+
+
+
+        alive = await pingServer();
+
+
     }
 
-    if (alive) {
-      console.log(`[${new Date().toLocaleTimeString()}] Server is awake ✅`);
-      updateStatus("awake", "Server is awake ✅");
 
-      // repeat later to keep alive
-      setTimeout(() => {
-        updateStatus("pinging", "Keeping server awake...");
-        wakeRenderServer();
-      }, KEEP_ALIVE_INTERVAL);
-    } else {
-      console.warn("Server did not respond after multiple tries ❌");
-      updateStatus("sleeping", "Server unreachable ❌");
+
+
+    if(alive){
+
+
+
+        updateStatus(
+            "awake",
+            "🟢 Payment Gateway Online • Ready to Accept Payments"
+        );
+
+
+
+        console.log(
+            "Payment Gateway Ready ✅"
+        );
+
+
+
+        setTimeout(()=>{
+
+
+            updateStatus(
+                "pinging",
+                "🔐 Maintaining Secure Payment Connection..."
+            );
+
+
+            wakeRenderServer();
+
+
+
+        }, KEEP_ALIVE_INTERVAL);
+
+
+
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", wakeRenderServer);
+
+
+    else{
+
+
+        updateStatus(
+            "sleeping",
+            "🔴 Payment Gateway Temporarily Unavailable"
+        );
+
+
+
+        console.warn(
+            "Payment Gateway Offline"
+        );
+
+
+    }
+
+
+}
+
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    wakeRenderServer
+);
 </script>
 <script>
 
