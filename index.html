@@ -15,99 +15,226 @@
 
 <link href="tooplate-neural-style.css" rel="stylesheet">
 
-
 <style>
 
 .hero {
-    position:relative;
-    padding:80px 0 100px;
-    text-align:center;
+position:relative;
+padding:80px 0 100px;
+text-align:center;
 }
 
 .hero-content {
-    position:relative;
-    z-index:2;
+position:relative;
+z-index:2;
 }
-
 
 .hero-video-wrapper {
-    display:inline-block;
-    margin:50px auto 0;
+display:inline-block;
+margin:50px auto 0;
 }
-
 
 .hero-video {
-    width:720px;
-    height:405px;
-    border-radius:10px;
+width:720px;
+height:405px;
+border-radius:10px;
 }
-
 
 #about {
-    margin-top:140px;
+margin-top:140px;
 }
-
 
 
 .crypto-btn {
 
-    display:block;
-    padding:16px 24px;
-    border-radius:14px;
+display:block;
+padding:16px 24px;
 
-    text-align:center;
-    text-decoration:none;
+border-radius:14px;
 
-    color:white;
+text-align:center;
 
-    font-family:'Segoe UI',sans-serif;
-    font-size:16px;
-    font-weight:700;
+text-decoration:none;
 
-    background:
-    linear-gradient(180deg,#38c9ff,#0d95ff);
+color:white;
 
-    box-shadow:
-    0 14px 35px rgba(0,145,255,.35);
+font-family:'Segoe UI',sans-serif;
 
-}
+font-size:16px;
 
+font-weight:700;
 
-.crypto-btn:hover {
+background:
+linear-gradient(180deg,#38c9ff,#0d95ff);
 
-    transform:translateY(-2px);
+box-shadow:
+0 14px 35px rgba(0,145,255,.35);
 
-}
-
-
-
-.price {
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
+transition:.25s;
 
 }
 
 
-.old-price {
+.crypto-btn:hover{
 
-    color:#777;
-    font-size:26px;
-    text-decoration:line-through;
+transform:translateY(-2px);
 
 }
 
 
-.new-price {
 
-    color:#00ff88;
-    font-size:58px;
-    font-weight:800;
+.price{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
 
 }
 
+
+
+.old-price{
+
+color:#777;
+
+font-size:26px;
+
+text-decoration:line-through;
+
+}
+
+
+
+.new-price{
+
+color:#00ff88;
+
+font-size:58px;
+
+font-weight:800;
+
+}
+
+
+
+.coin-btn{
+
+width:100%;
+
+margin-top:12px;
+
+padding:14px;
+
+border-radius:12px;
+
+border:none;
+
+background:#222;
+
+color:white;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+
+.coin-btn:hover{
+
+background:#333;
+
+}
+
+
+
+.payment-timer{
+
+margin-top:20px;
+
+padding:18px;
+
+background:#181818;
+
+border-radius:16px;
+
+text-align:center;
+
+}
+
+
+.timer-number{
+
+font-size:42px;
+
+font-weight:800;
+
+color:#00ff88;
+
+}
+
+
+
+.progress{
+
+height:8px;
+
+background:#333;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:15px;
+
+}
+
+
+
+.progress-bar{
+
+height:100%;
+
+width:100%;
+
+background:linear-gradient(
+90deg,
+#00ff88,
+#00c853
+);
+
+transition:width 1s linear;
+
+}
+
+
+
+.download-after-pay{
+
+display:none;
+
+margin-top:25px;
+
+padding:16px;
+
+border-radius:14px;
+
+background:#00c853;
+
+color:#000;
+
+font-weight:800;
+
+text-decoration:none;
+
+font-size:18px;
+
+}
 
 
 </style>
@@ -119,7 +246,6 @@
 
 
 <canvas id="neural-bg"></canvas>
-
 
 
 <nav id="navbar">
@@ -136,6 +262,7 @@ gap:14px;
 text-decoration:none;
 ">
 
+
 <img src="https://freebitcoin-tools.github.io/download/logo.png"
 style="
 width:56px;
@@ -151,15 +278,15 @@ font-weight:800;
 letter-spacing:-1px;
 ">
 
-<span style="color:#7CFF4F;">
+<span style="color:#7CFF4F">
 free
 </span>
 
-<span style="color:#1FB7FF;">
+<span style="color:#1FB7FF">
 bitcoin
 </span>
 
-<span style="color:#fff;">
+<span style="color:#fff">
  Tools
 </span>
 
@@ -174,26 +301,11 @@ bitcoin
 
 <ul>
 
-<li>
-<a href="#home">
-HOME
-</a>
-</li>
+<li><a href="#home">HOME</a></li>
 
+<li><a href="#about">ABOUT</a></li>
 
-<li>
-<a href="#about">
-ABOUT
-</a>
-</li>
-
-
-<li>
-<a href="#projects">
-ADVANTAGES
-</a>
-</li>
-
+<li><a href="#projects">ADVANTAGES</a></li>
 
 </ul>
 
@@ -203,8 +315,6 @@ ADVANTAGES
 </div>
 
 </nav>
-
-
 
 
 
@@ -230,7 +340,6 @@ It monitors game server algorithms,
 provides clear analytics for every session
 
 </p>
-
 
 
 
@@ -277,12 +386,8 @@ stroke-width="2">
 
 </div>
 
+
 </section>
-
-
-
-
-
 <section id="about"
 class="fade-in"
 style="
@@ -295,11 +400,8 @@ padding:50px 20px;
 
 
 <h3 class="section-title">
-
 Assistant Pro V3.0
-
 </h3>
-
 
 
 
@@ -314,8 +416,6 @@ box-shadow:
 0 0 50px rgba(0,255,136,.08),
 0 20px 60px rgba(0,0,0,.8);
 ">
-
-
 
 
 
@@ -354,7 +454,6 @@ Try Assistant Pro
 </div>
 
 
-
 <div style="
 color:#aaa;
 font-size:13px;
@@ -388,6 +487,7 @@ FREE
 
 
 
+
 <div style="
 color:#888;
 font-size:13px;
@@ -397,13 +497,18 @@ margin-bottom:30px;
 Instant activation • No Credit Card • Cancel Anytime
 
 </div>
-<!-- PREMIUM PURCHASE BLOCK -->
+
+
+
+
 
 <div style="
 height:1px;
 margin:30px 0;
 background:linear-gradient(90deg,transparent,#333,transparent);
 "></div>
+
+
 
 
 
@@ -415,7 +520,9 @@ margin-bottom:8px;
 ">
 
 
+
 <div>
+
 
 <div style="
 color:#FCFCFD;
@@ -427,6 +534,7 @@ font-family:'Segoe UI';
 Premium Access
 
 </div>
+
 
 
 <div style="
@@ -459,6 +567,7 @@ SAVE 41%
 </div>
 
 
+
 </div>
 
 
@@ -466,22 +575,16 @@ SAVE 41%
 
 
 <div class="price"
-style="
-margin-top:26px;
-">
+style="margin-top:26px;">
 
 
 <span class="old-price">
-
 $450
-
 </span>
 
 
 <span class="new-price">
-
 $265
-
 </span>
 
 
@@ -505,18 +608,12 @@ Instant activation • Free updates
 
 
 
-<!-- BUY BUTTON -->
-
-
 <div style="margin-top:32px;">
 
 
 <a href="#"
 class="crypto-btn"
-onclick="
-openCrypto();
-return false;
-">
+onclick="openCrypto();return false;">
 
 💎 Buy with Crypto
 
@@ -528,27 +625,14 @@ return false;
 
 
 
-
-<!-- PAYMENT RESULT -->
-
-
-<div id="result"
-
-style="
-margin-top:20px;
-">
-
-</div>
-
-
+<div id="result"></div>
 
 
 
 </div>
+
 
 </section>
-
-
 
 
 
@@ -573,9 +657,6 @@ z-index:99999;
 ">
 
 
-
-
-
 <div id="cryptoBox"
 
 style="
@@ -589,9 +670,6 @@ font-family:'Segoe UI';
 box-shadow:
 0 20px 70px rgba(0,0,0,.8);
 ">
-
-
-
 
 
 <button onclick="closeCrypto()"
@@ -616,20 +694,14 @@ cursor:pointer;
 
 
 
-
-
 <h2 style="text-align:center;">
-
 Choose Crypto Payment
-
 </h2>
 
 
 
 
-
 <button onclick="selectCrypto('USDT_TRC20')"
-
 class="coin-btn">
 
 🟢 USDT TRC20
@@ -637,8 +709,8 @@ class="coin-btn">
 </button>
 
 
-<button onclick="selectCrypto('BTC')"
 
+<button onclick="selectCrypto('BTC')"
 class="coin-btn">
 
 ₿ Bitcoin
@@ -646,8 +718,8 @@ class="coin-btn">
 </button>
 
 
-<button onclick="selectCrypto('LTC')"
 
+<button onclick="selectCrypto('LTC')"
 class="coin-btn">
 
 🔵 Litecoin
@@ -655,8 +727,8 @@ class="coin-btn">
 </button>
 
 
-<button onclick="selectCrypto('ETH')"
 
+<button onclick="selectCrypto('ETH')"
 class="coin-btn">
 
 ◆ Ethereum
@@ -664,8 +736,8 @@ class="coin-btn">
 </button>
 
 
-<button onclick="selectCrypto('SOL')"
 
+<button onclick="selectCrypto('SOL')"
 class="coin-btn">
 
 🟣 Solana
@@ -674,6 +746,137 @@ class="coin-btn">
 
 
 
+</div>
+
+</div>
+
+
+
+
+
+<section id="projects" class="fade-in">
+
+
+<h2 class="section-title">
+ADVANTAGES
+</h2>
+
+
+<div class="projects-grid">
+
+
+<div class="glass-card project-card">
+
+<h3 style="color:var(--primary);">
+Universal Platform Support
+</h3>
+
+<p style="color:var(--text-secondary);">
+Our assistant works seamlessly across freebitco.in gaming platforms, providing a fully customizable experience for every player.
+</p>
+
+</div>
+
+
+
+<div class="glass-card project-card">
+
+<h3 style="color:var(--secondary);">
+Trainable Model
+</h3>
+
+<p style="color:var(--text-secondary);">
+A trainable AI model adapts to your play style, helping predict optimal strategies and actions for your next session.
+</p>
+
+</div>
+
+
+<div class="glass-card project-card">
+
+<h3 style="color:var(--accent);">
+Adaptive Analytics
+</h3>
+
+<p style="color:var(--text-secondary);">
+Intelligent analysis of game data helps you respond to changes effectively.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+<footer>
+
+<div class="footer-content">
+
+
+<div class="footer-section">
+
+<h3>
+Navigation
+</h3>
+
+
+<ul>
+
+<li>
+<a href="#home">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="#about">
+About
+</a>
+</li>
+
+
+<li>
+<a href="#projects">
+Advantages
+</a>
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+<div class="footer-section">
+
+
+<h3>
+Connect
+</h3>
+
+
+<p style="color:var(--text-secondary);">
+Let's build something amazing together
+</p>
+
+
+<div class="social-links">
+
+<a href="#">
+…
+</a>
+
+<a href="#">
+…
+</a>
+
+<a href="#">
+…
+</a>
 
 
 </div>
@@ -682,156 +885,58 @@ class="coin-btn">
 </div>
 
 
+</div>
 
 
 
 
+<div class="footer-bottom">
 
-<style>
 
+<p>
 
-.coin-btn {
+© 2025 Multi-Platform Assistant Pro Portfolio.
+All rights reserved.
 
-width:100%;
+Provided by
 
-margin-top:12px;
+<a href="https://freebitcoin-tools.github.io/download/index.html">
 
-padding:14px;
+FreeBitco.in Assistant Pro
 
-border-radius:12px;
+</a>
 
-border:none;
+</p>
 
-background:#222;
 
-color:white;
+</div>
 
-font-size:16px;
 
-font-weight:700;
+</footer>
 
-cursor:pointer;
 
-}
 
 
-.coin-btn:hover {
-
-background:#333;
-
-}
-
-
-
-
-
-/* PAYMENT TIMER */
-
-
-.payment-timer {
-
-
-margin-top:20px;
-
-padding:18px;
-
-background:#181818;
-
-border-radius:16px;
-
-text-align:center;
-
-
-}
-
-
-
-.timer-number {
-
-font-size:42px;
-
-font-weight:800;
-
-color:#00ff88;
-
-}
-
-
-
-.progress {
-
-height:8px;
-
-background:#333;
-
-border-radius:20px;
-
-overflow:hidden;
-
-margin-top:15px;
-
-}
-
-
-.progress-bar {
-
-height:100%;
-
-width:100%;
-
-background:linear-gradient(
-90deg,
-#00ff88,
-#00c853
-);
-
-transition:width 1s linear;
-
-}
-
-
-
-
-
-.download-after-pay {
-
-
-display:none;
-
-margin-top:25px;
-
-padding:16px;
-
-border-radius:14px;
-
-background:#00c853;
-
-color:#000;
-
-font-weight:800;
-
-text-decoration:none;
-
-font-size:18px;
-
-}
-
-
-</style>
 
 <script src="tooplate-neural-scripts.js"></script>
+
 <script src="buy.js"></script>
+
+
+
 
 
 <script>
 
 
-const SERVER_URL = "https://crypto-shop-r6d2.onrender.com";
+const SERVER_URL =
+"https://crypto-shop-r6d2.onrender.com";
 
 
-let currentOrder = null;
 
-let timerInterval = null;
+let currentOrder=null;
+
+let timerInterval=null;
 
 
 
@@ -839,18 +944,24 @@ let timerInterval = null;
 
 function openCrypto(){
 
-    document.getElementById("cryptoModal").style.display="flex";
+document.getElementById(
+"cryptoModal"
+).style.display="flex";
 
 }
+
 
 
 
 
 function closeCrypto(){
 
-    document.getElementById("cryptoModal").style.display="none";
+document.getElementById(
+"cryptoModal"
+).style.display="none";
 
 }
+
 
 
 
@@ -864,13 +975,17 @@ try{
 
 
 const response = await fetch(
-SERVER_URL + "/create-order",
+
+SERVER_URL+"/create-order",
+
 {
 
 method:"POST",
 
 headers:{
+
 "Content-Type":"application/json"
+
 },
 
 
@@ -883,10 +998,16 @@ coin:coin
 })
 
 
-});
+}
+
+);
 
 
-const data = await response.json();
+
+const data =
+await response.json();
+
+
 
 
 
@@ -900,7 +1021,13 @@ return;
 
 
 
-currentOrder = data.orderId || data.id;
+
+
+currentOrder =
+data.orderId ||
+data.id;
+
+
 
 
 
@@ -910,12 +1037,14 @@ showPayment(data);
 
 }
 
-catch(e){
+catch(error){
 
 
-console.log(e);
+console.log(error);
 
-alert("Payment server connection error");
+alert(
+"Payment server connection error"
+);
 
 
 }
@@ -935,8 +1064,10 @@ alert("Payment server connection error");
 function showPayment(data){
 
 
+document.getElementById(
+"cryptoBox"
+).innerHTML=`
 
-document.getElementById("cryptoBox").innerHTML = `
 
 
 <button onclick="closeCrypto()"
@@ -960,12 +1091,12 @@ font-size:22px;
 
 
 
+
 <h2 style="text-align:center">
 
 Payment Details
 
 </h2>
-
 
 
 
@@ -982,9 +1113,14 @@ margin-top:20px;
 Currency:
 </p>
 
+
 <h3>
+
 ${data.coin}
+
 </h3>
+
+
 
 
 
@@ -992,9 +1128,14 @@ ${data.coin}
 Amount:
 </p>
 
+
 <h2>
+
 ${data.amount} ${data.coin}
+
 </h2>
+
+
 
 
 
@@ -1002,32 +1143,41 @@ ${data.amount} ${data.coin}
 Network:
 </p>
 
+
 <h3>
+
 ${data.network}
+
 </h3>
 
 
 
 
+
+
 <p>
-Wallet:
+Wallet address:
 </p>
+
 
 
 <textarea
 
 style="
 width:100%;
-height:70px;
+height:80px;
 background:#222;
 color:white;
 border-radius:10px;
 padding:10px;
+resize:none;
 ">
 
 ${data.wallet}
 
 </textarea>
+
+
 
 
 
@@ -1040,8 +1190,8 @@ Waiting Payment
 </div>
 
 
-<div class="timer-number"
 
+<div class="timer-number"
 id="timer">
 
 15:00
@@ -1050,10 +1200,10 @@ id="timer">
 
 
 
+
 <div class="progress">
 
 <div class="progress-bar"
-
 id="progress">
 
 </div>
@@ -1062,6 +1212,9 @@ id="progress">
 
 
 </div>
+
+
+
 
 
 
@@ -1079,10 +1232,10 @@ Checking payment...
 
 
 
+
 <a id="downloadLink"
 
 class="download-after-pay"
-
 target="_blank">
 
 Download Product
@@ -1095,12 +1248,13 @@ Download Product
 </div>
 
 
+
 `;
 
 
 
-startTimer();
 
+startTimer();
 
 checkPayment();
 
@@ -1118,8 +1272,7 @@ checkPayment();
 function startTimer(){
 
 
-let seconds = 900;
-
+let seconds=900;
 
 
 clearInterval(timerInterval);
@@ -1139,25 +1292,36 @@ let sec=seconds%60;
 
 
 
-document.getElementById("timer").innerHTML =
+document.getElementById(
+"timer"
+).innerHTML=
 
-min+":"+(sec<10?"0":"")+sec;
+min+":"+
+(sec<10?"0":"")+
+sec;
 
 
 
-document.getElementById("progress").style.width =
+document.getElementById(
+"progress"
+).style.width=
 
 (seconds/900*100)+"%";
 
 
 
 
+
 if(seconds<=0){
+
 
 clearInterval(timerInterval);
 
 
-document.getElementById("payStatus").innerHTML =
+document.getElementById(
+"payStatus"
+).innerHTML=
+
 "Payment session expired";
 
 
@@ -1181,12 +1345,8 @@ document.getElementById("payStatus").innerHTML =
 async function checkPayment(){
 
 
-
-if(!currentOrder){
-
+if(!currentOrder)
 return;
-
-}
 
 
 
@@ -1200,19 +1360,23 @@ let interval=setInterval(async()=>{
 tries++;
 
 
+
 try{
 
 
-const res = await fetch(
+const response =
+await fetch(
 
 SERVER_URL+
-"/check-order/"+currentOrder
+"/check-order/"+
+currentOrder
 
 );
 
 
 
-const data = await res.json();
+const data =
+await response.json();
 
 
 
@@ -1227,7 +1391,10 @@ clearInterval(timerInterval);
 
 
 
-document.getElementById("payStatus").innerHTML =
+
+document.getElementById(
+"payStatus"
+).innerHTML=
 
 "✅ Payment Confirmed";
 
@@ -1235,7 +1402,8 @@ document.getElementById("payStatus").innerHTML =
 
 
 
-let btn=document.getElementById(
+const btn =
+document.getElementById(
 "downloadLink"
 );
 
@@ -1248,9 +1416,9 @@ btn.style.display="block";
 
 
 
-
-
 }
+
+
 
 
 
@@ -1260,7 +1428,10 @@ if(tries>180){
 clearInterval(interval);
 
 
-document.getElementById("payStatus").innerHTML =
+document.getElementById(
+"payStatus"
+).innerHTML=
+
 "Payment check timeout";
 
 
@@ -1268,13 +1439,12 @@ document.getElementById("payStatus").innerHTML =
 
 
 
+
 }
 
 catch(e){
 
-
 console.log(e);
-
 
 }
 
